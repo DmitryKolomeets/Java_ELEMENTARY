@@ -89,7 +89,7 @@ public class Calculator {
 
     public static void main(String[] args) {
 
- //       Calculator count = new Calculator();
+       Calculator count = new Calculator();
         start();
     }
 }
