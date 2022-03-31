@@ -12,7 +12,7 @@ public class Car {
     private String engine;
 
     public Car() {
-    } // Сonstructor without parameters
+    } // Constructor without parameters
 
     public Car(int mileage, int fuel, int speed, int coolantLevel, String color, String engine) {
         this.mileage = mileage;
