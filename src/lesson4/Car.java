@@ -10,9 +10,11 @@ public class Car {
     private int coolantLevel; // Litres
     private String color;
     private String engine;
+    private final int dailyMileageMax = 2000;
+    private final int carTankLimit = 60;
 
     public Car() {
-    } // Constructor without parameters
+    }
 
     public Car(int mileage, int fuel, int speed, int coolantLevel, String color, String engine) {
         this.mileage = mileage;
@@ -28,7 +30,7 @@ public class Car {
     }
 
     public void setMileage(int dailyMileage) {
-        if (dailyMileage > 0 && dailyMileage <= 2000)  // 2000 daily norm for mileage
+        if (dailyMileage > 0 && dailyMileage <= dailyMileageMax)
             this.mileage = mileage + dailyMileage;
             else {
             System.out.println("Wrong mileage. The indicator remained unchanged. ");
@@ -40,7 +42,7 @@ public class Car {
     }
 
     public void setFuel(int refueling) {
-        if (refueling > 0 && refueling <= (60 - fuel))    // 60 - car tank limit
+        if (refueling > 0 && refueling <= (carTankLimit - fuel))
             this.fuel = fuel + refueling;
         else {
             System.out.println("Wrong fuel quantity. The indicator remained unchanged. ");
