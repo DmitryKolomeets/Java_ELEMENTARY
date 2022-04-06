@@ -12,6 +12,7 @@ public class Car {
     private String engine;
     private final int dailyMileageMax = 2000;
     private final int carTankLimit = 60;
+    private int distanceOnService;
 
     public Car() {
     }
@@ -24,6 +25,34 @@ public class Car {
         this.color = color;
         this.engine = engine;
     }
+
+    public void addDistance(int additionalMileage) {
+        if (additionalMileage > 0) {
+
+            mileage += additionalMileage;
+            distanceOnService += additionalMileage;
+        }
+
+        if (additionalMileage < 0 ) {
+
+            throw new ArithmeticException("Введен отрицательный пробег");
+        }
+
+    }
+    public void addDistance(double additionalMileage) {
+        if (additionalMileage > 0) {
+
+            mileage += additionalMileage;
+            distanceOnService += additionalMileage;
+        }
+
+        if (additionalMileage < 0 ) {
+
+            throw new ArithmeticException("Введен отрицательный пробег");
+        }
+
+    }
+
 
     public int getMileage() {
         return mileage;
