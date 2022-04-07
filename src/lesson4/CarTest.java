@@ -4,16 +4,22 @@ public class CarTest {
 
     public static void main(String[] args) {
 
-        Car volvo = new Car(6748, 3, 0, 4, "red", "V4");
+        Car peugeot = new Car(12, 4, 0, 1, "white", "V2");
+        Car ferari = new SportCar(25, 15, 0, 1, "red", "V6");
+        Car man = new FreightCar(45781, 32, 0, 3, "black", "V6");
 
-        System.out.println(volvo.getEngine());
-        volvo.setMileage(3000);
-        System.out.println(volvo.getMileage());
-        volvo.setMileage(1348);
-        System.out.println(volvo.getMileage());
+        peugeot.numberOfDoors("");
+        ferari.numberOfDoors("");
+        man.numberOfDoors("");
 
+        ferari.setSpeed(400);
+        System.out.println(ferari.getSpeed());
+        ferari.setFuel(60);
+        System.out.println(ferari.getFuel());
 
-
-
+        man.setSpeed(32);
+        System.out.println(man.getSpeed());
+        man.setFuel(60);
+        System.out.println(man.getFuel());
     }
 }

@@ -2,17 +2,19 @@ package lesson4;
 
 import javax.swing.*;
 
+
 public class Car {
 
     private int mileage;
-    private int fuel;
-    private int speed;
+    protected int fuel;
+    protected int speed;
     private int coolantLevel; // Litres
     private String color;
     private String engine;
     private final int dailyMileageMax = 2000;
     private final int carTankLimit = 60;
     private int distanceOnService;
+    protected int speedLimit = 330;
 
     public Car() {
     }
@@ -26,30 +28,8 @@ public class Car {
         this.engine = engine;
     }
 
-    public void addDistance(int additionalMileage) {
-        if (additionalMileage > 0) {
-
-            mileage += additionalMileage;
-            distanceOnService += additionalMileage;
-        }
-
-        if (additionalMileage < 0 ) {
-
-            throw new ArithmeticException("Введен отрицательный пробег");
-        }
-
-    }
-    public void addDistance(double additionalMileage) {
-        if (additionalMileage > 0) {
-
-            mileage += additionalMileage;
-            distanceOnService += additionalMileage;
-        }
-
-        if (additionalMileage < 0 ) {
-
-            throw new ArithmeticException("Введен отрицательный пробег");
-        }
+    public void  numberOfDoors (String numberOfDoors){
+        System.out.println("number of doors is 5");
 
     }
 
@@ -83,8 +63,24 @@ public class Car {
 
     }
 
+    public void setSpeed(double movementSpeed) {
+        if (movementSpeed > 0 && movementSpeed < speedLimit)
+            this.speed = (int) (speed + movementSpeed);
+        else {
+            System.out.println("Wrong speed. The indicator remained unchanged. ");
+        }
+    }
+
+    public void setSpeed(long movementSpeed) {
+        if (movementSpeed > 0 && movementSpeed < speedLimit)
+            this.speed = (int) (speed + movementSpeed);
+        else {
+            System.out.println("Wrong speed. The indicator remained unchanged. ");
+        }
+    }
+
     public void setSpeed(int movementSpeed) {
-        if (movementSpeed > 0 && movementSpeed < 330)
+        if (movementSpeed > 0 && movementSpeed < speedLimit)
             this.speed = speed + movementSpeed;
         else {
             System.out.println("Wrong speed. The indicator remained unchanged. ");
@@ -94,6 +90,8 @@ public class Car {
     public int getCoolantLevel() {
         return coolantLevel;
     }
+
+
 
     public void setCoolantLevel(int coolantAdd) {
         if (coolantAdd > 0 && coolantAdd <= (5 - coolantLevel))
