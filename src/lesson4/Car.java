@@ -28,7 +28,7 @@ public class Car {
         this.engine = engine;
     }
 
-    public void  numberOfDoors (String numberOfDoors){
+    public void numberOfDoors(String numberOfDoors) {
         System.out.println("number of doors is 5");
 
     }
@@ -41,7 +41,7 @@ public class Car {
     public void setMileage(int dailyMileage) {
         if (dailyMileage > 0 && dailyMileage <= dailyMileageMax)
             this.mileage = mileage + dailyMileage;
-            else {
+        else {
             System.out.println("Wrong mileage. The indicator remained unchanged. ");
         }
     }
@@ -92,7 +92,6 @@ public class Car {
     }
 
 
-
     public void setCoolantLevel(int coolantAdd) {
         if (coolantAdd > 0 && coolantAdd <= (5 - coolantLevel))
             this.coolantLevel = coolantLevel + coolantAdd;
@@ -110,7 +109,7 @@ public class Car {
     public void setColor(String colorChange) {
         if (colorChange.equals("red") || colorChange.equals("black") || colorChange.equals("white"))
             this.color = colorChange;
-else {
+        else {
             System.out.println("Wrong color. The indicator remained unchanged. ");
         }
     }
@@ -121,7 +120,7 @@ else {
 
     public void setEngine(String engineChange) {
         if (engineChange.equals("V6") || engineChange.equals("V4") || engineChange.equals("V2"))
-        this.engine = engineChange;
+            this.engine = engineChange;
         else {
             System.out.println("Wrong Engine type. The indicator remained unchanged. ");
         }
