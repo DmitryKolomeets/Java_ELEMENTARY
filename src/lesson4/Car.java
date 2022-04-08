@@ -3,7 +3,7 @@ package lesson4;
 import javax.swing.*;
 
 
-public abstract class Car {
+public abstract class Car implements TakeAction {
 
     protected int mileage = 0;
     protected int fuel;

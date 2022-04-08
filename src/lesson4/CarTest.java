@@ -1,5 +1,7 @@
 package lesson4;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class CarTest {
 
     public static void main(String[] args) {
@@ -37,5 +39,22 @@ public class CarTest {
         ferari.addDistance(4250);
         System.out.println(ferari.mileage);
         System.out.println(ferari.getDistanceOnService());
+        System.out.println();
+
+        Cow cow = new Cow();
+        cow.makeAMove("");
+        cow.makeSound("");
+        System.out.println();
+
+        man.makeAMove("");
+        man.makeSound("");
+        System.out.println();
+
+        ferari.makeAMove("");
+        ferari.makeSound("");
+
     }
+
+
+
 }

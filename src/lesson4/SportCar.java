@@ -1,6 +1,6 @@
 package lesson4;
 
-public class SportCar extends Car {
+public class SportCar extends Car implements TakeAction{
 
 
     public SportCar(int mileage, int fuel, int speed, int coolantLevel, String color, String engine) {
@@ -71,5 +71,15 @@ public class SportCar extends Car {
         else {
             System.out.println("Wrong fuel quantity. The indicator remained unchanged. ");
         }
+    }
+
+    @Override
+    public void makeSound(String sound) {
+        System.out.println("Bg-bg-bg");
+    }
+
+    @Override
+    public void makeAMove(String move) {
+        System.out.println("Bguuuummmm");
     }
 }

@@ -1,6 +1,6 @@
 package lesson4;
 
-public class FreightCar extends Car {
+public class FreightCar extends Car implements TakeAction{
 
      private final int kilometersToMaintenance = 10000;
 
@@ -77,5 +77,15 @@ public class FreightCar extends Car {
         else {
             System.out.println("Wrong fuel quantity. The indicator remained unchanged. ");
         }
+    }
+
+    @Override
+    public void makeSound(String sound) {
+        System.out.println("Tr-tr-tr");
+    }
+
+    @Override
+    public void makeAMove(String move) {
+        System.out.println("Troom-Troom");
     }
 }
