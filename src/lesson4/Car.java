@@ -3,9 +3,9 @@ package lesson4;
 import javax.swing.*;
 
 
-public class Car {
+public abstract class Car {
 
-    private int mileage;
+    protected int mileage = 0;
     protected int fuel;
     protected int speed;
     private int coolantLevel; // Litres
@@ -13,8 +13,9 @@ public class Car {
     private String engine;
     private final int dailyMileageMax = 2000;
     private final int carTankLimit = 60;
-    private int distanceOnService;
+    protected int distanceOnService ;
     protected int speedLimit = 330;
+
 
     public Car() {
     }
@@ -27,6 +28,15 @@ public class Car {
         this.color = color;
         this.engine = engine;
     }
+
+    abstract public boolean isReadyToService();
+
+    abstract public int getDistanceOnService();
+
+    abstract public void addDistance(int additionalDistance);
+
+    abstract public void addDistance(double additionalDistance);
+
 
     public void numberOfDoors(String numberOfDoors) {
         System.out.println("number of doors is 5");
@@ -128,8 +138,8 @@ public class Car {
 
     public static void main(String[] args) {
 
-        Car mclaren = new Car(13453, 12, 0, 2, "white", "V6");
-        Car reno = new Car();
+        Car mclaren = new SportCar(13453, 12, 0, 2, "white", "V6");
+        Car reno = new SportCar(6547, 14, 0, 3, "white", "V4");
 
         mclaren.setMileage(250);
         System.out.println(mclaren.getMileage());

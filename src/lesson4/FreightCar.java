@@ -2,9 +2,57 @@ package lesson4;
 
 public class FreightCar extends Car {
 
+     private final int kilometersToMaintenance = 10000;
+
     public FreightCar(int mileage, int fuel, int speed, int coolantLevel, String color, String engine) {
         super(mileage, fuel, speed, coolantLevel, color, engine);
     }
+
+    @Override
+    public boolean isReadyToService() {
+        if (distanceOnService > kilometersToMaintenance) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int getDistanceOnService() {
+        int mileageToServiceCheck = (mileage - kilometersToMaintenance);
+        if ((mileageToServiceCheck) <= 0) {
+            return distanceOnService = Math.abs(mileageToServiceCheck);
+        } else return distanceOnService = kilometersToMaintenance - (mileage % kilometersToMaintenance);
+
+    }
+
+    @Override
+    public void addDistance(int additionalDistance) {
+        if (additionalDistance > 0) {
+            this.mileage += additionalDistance;
+            distanceOnService += additionalDistance;
+        }
+
+        if (additionalDistance < 0) {
+
+            throw new ArithmeticException("Введен отрицательный пробег");
+        }
+    }
+
+    @Override
+    public void addDistance(double additionalDistance) {
+        if (additionalDistance > 0) {
+
+            this.mileage += additionalDistance;
+            distanceOnService += additionalDistance;
+        }
+
+        if (additionalDistance < 0) {
+
+            throw new ArithmeticException("Введен отрицательный пробег");
+        }
+    }
+
 
     @Override
     public void numberOfDoors(String numberOfDoors) {

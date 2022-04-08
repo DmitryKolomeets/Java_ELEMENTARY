@@ -4,22 +4,38 @@ public class CarTest {
 
     public static void main(String[] args) {
 
-        Car peugeot = new Car(12, 4, 0, 1, "white", "V2");
+        Car peugeot = new SportCar(12, 4, 0, 1, "white", "V2");
         Car ferari = new SportCar(25, 15, 0, 1, "red", "V6");
-        Car man = new FreightCar(45781, 32, 0, 3, "black", "V6");
+        Car man = new FreightCar(0, 32, 0, 3, "black", "V6");
 
-        peugeot.numberOfDoors("");
-        ferari.numberOfDoors("");
-        man.numberOfDoors("");
+//        peugeot.numberOfDoors("");
+//        ferari.numberOfDoors("");
+//        man.numberOfDoors("");
+//
+//        ferari.setSpeed(400);
+//        System.out.println(ferari.getSpeed());
+//        ferari.setFuel(60);
+//        System.out.println(ferari.getFuel());
+//
+//        man.setSpeed(32);
+//        System.out.println(man.getSpeed());
+//        man.setFuel(60);
+//        System.out.println(man.getFuel());
+//
 
-        ferari.setSpeed(400);
-        System.out.println(ferari.getSpeed());
-        ferari.setFuel(60);
-        System.out.println(ferari.getFuel());
+        System.out.println(man.mileage);
+        man.addDistance(11000);
+        System.out.println(man.mileage);
+        System.out.println(man.isReadyToService());
+        System.out.println(man.getDistanceOnService());
+        man.addDistance(13000);
+        System.out.println(man.getDistanceOnService());
+        man.addDistance(43547);
+        System.out.println(man.getDistanceOnService());
 
-        man.setSpeed(32);
-        System.out.println(man.getSpeed());
-        man.setFuel(60);
-        System.out.println(man.getFuel());
+        System.out.println(ferari.mileage);
+        ferari.addDistance(4250);
+        System.out.println(ferari.mileage);
+        System.out.println(ferari.getDistanceOnService());
     }
 }
