@@ -1,8 +1,6 @@
 package lesson4;
 
-import org.w3c.dom.ls.LSOutput;
-
-public class CarTest {
+public class Main {
 
     public static void main(String[] args) {
 
