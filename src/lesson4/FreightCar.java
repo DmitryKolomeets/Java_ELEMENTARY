@@ -1,11 +1,14 @@
 package lesson4;
 
-public class FreightCar extends Car implements TakeAction{
+public class FreightCar extends Car implements TakeAction {
 
-     private final int kilometersToMaintenance = 10000;
+    private final int kilometersToMaintenance = 10000;
 
-    public FreightCar(int mileage, int fuel, int speed, int coolantLevel, String color, String engine) {
-        super(mileage, fuel, speed, coolantLevel, color, engine);
+    public FreightCar(int mileage, int fuel, int speed, int coolantLevel, CarColor carColor, BrandCar brandCar, CarBodyType carBodyType, EngineType engineType) {
+        super(mileage, fuel, speed, coolantLevel, carColor, brandCar, carBodyType, engineType);
+    }
+
+    public FreightCar() {
     }
 
     @Override

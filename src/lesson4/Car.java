@@ -1,7 +1,5 @@
 package lesson4;
 
-import javax.swing.*;
-
 
 public abstract class Car implements TakeAction {
 
@@ -9,24 +7,28 @@ public abstract class Car implements TakeAction {
     protected int fuel;
     protected int speed;
     private int coolantLevel; // Litres
-    private String color;
-    private String engine;
+    private CarColor carColor;
+    private BrandCar brandCar;
+    private CarBodyType carBodyType;
+    private EngineType engineType;
     private final int dailyMileageMax = 2000;
     private final int carTankLimit = 60;
-    protected int distanceOnService ;
+    protected int distanceOnService;
     protected int speedLimit = 330;
 
 
     public Car() {
     }
 
-    public Car(int mileage, int fuel, int speed, int coolantLevel, String color, String engine) {
+    public Car(int mileage, int fuel, int speed, int coolantLevel, CarColor carColor, BrandCar brandCar, CarBodyType carBodyType, EngineType engineType) {
         this.mileage = mileage;
         this.fuel = fuel;
         this.speed = speed;
         this.coolantLevel = coolantLevel;
-        this.color = color;
-        this.engine = engine;
+        this.carColor = carColor;
+        this.brandCar = brandCar;
+        this.carBodyType = carBodyType;
+        this.engineType = engineType;
     }
 
     abstract public boolean isReadyToService();
@@ -112,72 +114,40 @@ public abstract class Car implements TakeAction {
         }
     }
 
-    public String getColor() {
-        return color;
+    public CarColor getCarColor() {
+        return carColor;
     }
 
-    public void setColor(String colorChange) {
-        if (colorChange.equals("red") || colorChange.equals("black") || colorChange.equals("white"))
-            this.color = colorChange;
-        else {
-            System.out.println("Wrong color. The indicator remained unchanged. ");
-        }
+    public void setCarColor(CarColor carColor) {
+        this.carColor = carColor;
     }
 
-    public String getEngine() {
-        return engine;
+    public BrandCar getBrandCar() {
+        return brandCar;
     }
 
-    public void setEngine(String engineChange) {
-        if (engineChange.equals("V6") || engineChange.equals("V4") || engineChange.equals("V2"))
-            this.engine = engineChange;
-        else {
-            System.out.println("Wrong Engine type. The indicator remained unchanged. ");
-        }
+    public void setBrandCar(BrandCar brandCar) {
+        this.brandCar = brandCar;
+    }
+
+    public CarBodyType getCarBodyType() {
+        return carBodyType;
+    }
+
+    public void setCarBodyType(CarBodyType carBodyType) {
+        this.carBodyType = carBodyType;
+    }
+
+
+    public EngineType getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(EngineType engineType) {
+        this.engineType = engineType;
     }
 
     public static void main(String[] args) {
-
-        Car mclaren = new SportCar(13453, 12, 0, 2, "white", "V6");
-        Car reno = new SportCar(6547, 14, 0, 3, "white", "V4");
-
-        mclaren.setMileage(250);
-        System.out.println(mclaren.getMileage());
-        mclaren.setMileage(2000);
-        System.out.println(mclaren.getMileage());
-        mclaren.setMileage(-150);                  // invalid data - method don't work
-        System.out.println(mclaren.getMileage());
-        mclaren.setMileage(6000);                  // invalid data - method don't work
-        System.out.println(mclaren.getMileage());
-
-        mclaren.setFuel(48);
-        System.out.println(mclaren.getFuel());
-        mclaren.setFuel(47);                       // invalid data - method don't work
-        System.out.println(mclaren.getFuel());
-
-        mclaren.setSpeed(13);
-        System.out.println(mclaren.getSpeed());
-        mclaren.setSpeed(500);                     // invalid data - method don't work
-        System.out.println(mclaren.getSpeed());
-
-        mclaren.setCoolantLevel(3);
-        System.out.println(mclaren.getCoolantLevel());
-        mclaren.setCoolantLevel(-6);               // invalid data - method don't work
-        System.out.println(mclaren.getCoolantLevel());
-        mclaren.setCoolantLevel(-4);
-        System.out.println(mclaren.getCoolantLevel());
-
-        mclaren.setColor("black");
-        System.out.println(mclaren.getColor());
-        mclaren.setColor("red");
-        System.out.println(mclaren.getColor());
-        mclaren.setColor("pink");                 // invalid color - method don't work
-        System.out.println(mclaren.getColor());
-
-        mclaren.setEngine("V2");
-        System.out.println(mclaren.getEngine());
-        mclaren.setEngine("V12");                // invalid Engine - method don't work
-        System.out.println(mclaren.getEngine());
 
 
     }

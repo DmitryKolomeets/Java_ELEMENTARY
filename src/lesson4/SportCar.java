@@ -1,11 +1,12 @@
 package lesson4;
 
-public class SportCar extends Car implements TakeAction{
+public class SportCar extends Car implements TakeAction {
 
 
-    public SportCar(int mileage, int fuel, int speed, int coolantLevel, String color, String engine) {
-        super(mileage, fuel, speed, coolantLevel, color, engine);
+    public SportCar(int mileage, int fuel, int speed, int coolantLevel, CarColor carColor, BrandCar brandCar, CarBodyType carBodyType, EngineType engineType) {
+        super(mileage, fuel, speed, coolantLevel, carColor, brandCar, carBodyType, engineType);
     }
+
     private final int kilometersToMaintenance = 5000;
 
     @Override
