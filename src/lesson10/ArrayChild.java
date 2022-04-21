@@ -9,6 +9,11 @@ import java.util.stream.Stream;
 
 public class ArrayChild extends ArrayParent{
 
+    public String brand;
+
+    public ArrayChild(String brand) {
+        this.brand = brand;
+    }
 
     @Override
     public int size() {
@@ -163,5 +168,12 @@ public class ArrayChild extends ArrayParent{
     @Override
     public Object[] toArray(Object[] a) {
         return new Object[0];
+    }
+
+    @Override
+    public String toString() {
+        return "ArrayChild{" +
+                "brand='" + brand + '\'' +
+                '}';
     }
 }
