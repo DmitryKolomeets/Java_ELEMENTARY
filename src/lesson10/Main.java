@@ -1,28 +1,32 @@
 package lesson10;
 
 import java.util.*;
+import java.util.ListIterator;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        List<ArrayChild> cars = new ArrayList();
+        List<MyArrayListTrain> cars = new ArrayList();
+        List<MyArrayListTrain> sportCars = new ArrayList();
+
+
 
         System.out.println();
         System.out.println("init size = " + cars.size());
 
         System.out.println("collection cars is emty? - " + cars.isEmpty());
 
-        ArrayChild lotus = new ArrayChild("Lotus");
-        ArrayChild maserati = new ArrayChild("Maserati");
-        ArrayChild lamborghini = new ArrayChild("Lamborghini");
-        ArrayChild bugatti = new ArrayChild("Bugatti");
-        ArrayChild ferrari = new ArrayChild("Ferrari");
-        ArrayChild mcLaren = new ArrayChild("McLaren");
-        ArrayChild mazzanti = new ArrayChild("Mazzanti");
-        ArrayChild pagani = new ArrayChild("Pagani");
-        ArrayChild saleen = new ArrayChild("Saleen");
-        ArrayChild porsche = new ArrayChild("Porsche");
+        MyArrayListTrain lotus = new MyArrayListTrain("Lotus");
+        MyArrayListTrain maserati = new MyArrayListTrain("Maserati");
+        MyArrayListTrain lamborghini = new MyArrayListTrain("Lamborghini");
+        MyArrayListTrain bugatti = new MyArrayListTrain("Bugatti");
+        MyArrayListTrain ferrari = new MyArrayListTrain("Ferrari");
+        MyArrayListTrain mcLaren = new MyArrayListTrain("McLaren");
+        MyArrayListTrain mazzanti = new MyArrayListTrain("Mazzanti");
+        MyArrayListTrain pagani = new MyArrayListTrain("Pagani");
+        MyArrayListTrain saleen = new MyArrayListTrain("Saleen");
+        MyArrayListTrain porsche = new MyArrayListTrain("Porsche");
 
         cars.add(lotus);
         cars.add(maserati);
@@ -35,45 +39,55 @@ public class Main {
         cars.add(saleen);
         cars.add(porsche);
 
+        System.out.println(cars.toString());
 
-        System.out.println("size after adding elements = " + cars.size());
+        System.out.println(cars.get(3));
 
-        System.out.println(cars.contains("Bugatti"));
+        cars.clear();
 
-        System.out.println("brand in index 3 is " + cars.get(3));
+        System.out.println(cars.toString());
 
-        ArrayChild mercedes = new ArrayChild("Mercedes");
+        cars.add(mazzanti);
+        cars.add(pagani);
+        cars.add(saleen);
+        cars.add(0, porsche);
 
-        cars.set(9, mercedes);
-        System.out.println("element 9 is " + cars.get(9));
+        cars.remove(2);
 
-        System.out.println("is sallen here? - " + cars.contains(saleen));
+        cars.remove(mcLaren);
 
-        List<ArrayChild> europianCars = new ArrayList();
-        ArrayChild opel = new ArrayChild("Opel");
-        europianCars.add(opel);
+        System.out.println(cars.toString());
 
-        europianCars.addAll(1, cars);
-        System.out.println(europianCars);
+        sportCars.add(mazzanti);
+        sportCars.add(pagani);
+        sportCars.add(saleen);
+        sportCars.add(porsche);
 
-        europianCars.remove(maserati);
-        System.out.println("index of Lotus is " + cars.indexOf(lotus));
+        cars.addAll(sportCars);
 
-        System.out.println(Arrays.toString(cars.toArray()));
+        System.out.println(cars.isEmpty());
+        System.out.println(cars);
+        System.out.println(cars.contains(saleen));
 
-        System.out.println(cars.subList(7,9));
 
-        ArrayList<Integer> digits = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10));
+        ListIterator<MyArrayListTrain> listIterator = cars.listIterator();
 
-        Spliterator<Integer> sItr = digits.spliterator();
 
-        sItr.tryAdvance( d -> System.out.println( d ) );
-        sItr.tryAdvance( d -> System.out.println( d ) );
-        sItr.tryAdvance( d -> System.out.println( d ) );
-        sItr.tryAdvance( d -> System.out.println( d ) );
+        while (listIterator.hasNext()) {
+            Object element = listIterator.next();
+            listIterator.set((MyArrayListTrain) element);
+        }
 
-        sItr.forEachRemaining( d -> System.out.println( d ) );
+
+        System.out.println("\n" + cars);
+        System.out.print("\n arrayList in reverse order: \n \n");
+
+
+        while (listIterator.hasPrevious()) {
+            Object element = listIterator.previous();
+            System.out.print(element + " ");
+        }
+
     }
-
 }
 
