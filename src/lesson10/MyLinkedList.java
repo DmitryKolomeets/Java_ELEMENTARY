@@ -14,6 +14,8 @@ public class MyLinkedList implements List {
 
     }
 
+
+
     public MyLinkedList(Collection<String> list) {
         this();
         addAll(list);
